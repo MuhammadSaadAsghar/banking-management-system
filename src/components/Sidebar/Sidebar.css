@@ -1,0 +1,9 @@
+.sidebar li{
+    list-style: none;
+}
+.sidebar button{
+    color: white ;
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+}
