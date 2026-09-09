@@ -74,30 +74,36 @@ const RecentTransaction = () => {
     <>
    
       <section className="border border-gray-300 py-4 rounded-xl bg-white">
-        <header className="flex justify-between text-2xl px-2 font-semibold ">
-          <h2>Recent Transactions</h2>
-          <Link className="text-[#0D6EFD] cursor-pointer" to="/transactions">
-            View All
-          </Link>
-        </header>
-        <div className="overflow-x-auto">
+       <header className="flex flex-col gap-2 px-3 sm:flex-row sm:items-center sm:justify-between">
+  <h2 className="text-xl font-semibold sm:text-2xl">
+    Recent Transactions
+  </h2>
 
-          <table className="w-full mt-4">
+  <Link
+    className="text-sm text-[#0D6EFD] cursor-pointer sm:text-base"
+    to="/transactions"
+  >
+    View All
+  </Link>
+</header>
+        <div className=" ">
+
+          <table className="w-full mt-4 text-xs sm:text-sm">
             <thead className="border-b border-t bg-gray-200  border-gray-200">
               <tr >
-                <th className="text-left lg:px-5 px-2 py-3 text-xs font-medium text-gray-500">
+               <th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
                   Date
                 </th>
-                <th className="text-left py-5 lg:px-3 px-2 text-xs font-medium text-gray-500">
+                <th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
                   Type
                 </th>
-                <th className="text-left py-5 lg:px-3 px-2 text-xs font-medium text-gray-500">
+               <th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
                   Account
                 </th>
-                <th className="text-left py-5 lg:px-3 px-2 text-xs font-medium text-gray-500">
+<th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
                   Amount
                 </th>
-                <th className="text-left py-5 lg:px-3 px-2 text-xs font-medium text-gray-500">
+               <th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
                   Status
                 </th>
               </tr>
@@ -106,21 +112,28 @@ const RecentTransaction = () => {
         {recentTransactions.map((ele) => {
             const Icon = ele.icon;
           return  <tr key={ele.id} className="border-b   border-gray-100">
-                <td className="lg:px-3 px-1 py-2 text-sm text-gray-700">
-                 {ele.date}
-                </td>
-                <td className={` py-2 px-1 lg:px-2 text-sm text-gray-700 `}> <div className="flex items-center gap-2"> <span className={`${ele.iconColor}`} ><Icon/></span>{ele.type}</div></td>
-                <td className=" py-2 px-1 lg:px-2 text-sm text-gray-700 ">
-                 {ele.account}
-                </td>
-                <td className={`py-2 px-1 lg:px-2 text-sm text-gray-700 ${ele.amountColor}`}>
-                  {ele.amount}
-                </td>
-                                  <td className="lg:px-3 px-1 py-2">
-                    <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-600">
-                      {ele.status}
-                    </span>
-                  </td>
+               <td className="px-2 py-2 sm:px-3 text-[10px] sm:text-sm text-gray-700">
+  {ele.date}
+</td>
+             <td className="px-2 py-2 sm:px-2 text-[10px] sm:text-sm text-gray-700">
+  <div className="flex items-center gap-1 sm:gap-2">
+    <span className={`${ele.iconColor}`}>
+      <Icon />
+    </span>
+    {ele.type}
+  </div>
+</td>
+               <td className="px-2 py-2 sm:px-2 text-[10px] sm:text-sm text-gray-700">
+  {ele.account}
+</td>
+               <td className={`px-2 py-2 sm:px-2 text-[10px] sm:text-sm ${ele.amountColor}`}>
+  {ele.amount}
+</td>
+                  <td className="px-2 py-2 sm:px-3">
+  <span className="rounded-full bg-green-100 px-2 py-1 text-[9px] sm:px-3 sm:text-xs font-medium text-green-600">
+    {ele.status}
+  </span>
+</td>
               </tr>
            
           })}
