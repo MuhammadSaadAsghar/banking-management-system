@@ -16,7 +16,7 @@ const Sidebarlink = () => {
      <div className="sidebar flex items-center justify-center  ">
         <ul className="flex flex-col gap-2">
           <li>
-            <NavLink className={({isActive})=>`block px-6 text-md rounded-lg transition-all duration-300 ${isActive?"text-white bg-[#0D6EFD]":"text-white hover:bg-[#0A2A4A]"}`} to="/dashboard"><Button><RxDashboard/>Dashboard</Button></NavLink>
+            <NavLink className={({isActive})=>`block px-6 text-md rounded-lg transition-all duration-300 ${isActive?"text-white bg-[#0D6EFD]":"text-white hover:bg-[#0A2A4A]"}`} to="/"><Button><RxDashboard/>Dashboard</Button></NavLink>
           </li>
           <li>
             <NavLink className={({isActive})=>`block px-6 text-md rounded-lg transition-all duration-300 ${isActive?"text-white bg-[#0D6EFD]":"text-white hover:bg-[#0A2A4A]"}`} to="/myaccount"><Button><MdAccountBalanceWallet/> My Account</Button></NavLink>

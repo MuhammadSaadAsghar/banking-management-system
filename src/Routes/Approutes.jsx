@@ -18,7 +18,7 @@ const Approutes = () => {
         <Routes>
                 
     <Route  element={<Layout/>} >
-    <Route path='/dashboard' element={<Dashboard/>} />
+    <Route path='/' element={<Dashboard/>} />
     <Route path='/myaccount' element={<MyAccount/>} />
     <Route path='/deposit' element={<Deposit/>} />
     <Route path='/withdraw' element={<Withdraw/>} />
