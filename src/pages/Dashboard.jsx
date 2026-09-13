@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
    <>    
    <div>
-    <section>
+    <section className='p-6'>
       <h1 className='text-2xl font-bold'>Welcome back, Muhammad Saad Asghar &#128075;</h1>
       <p className='text-gray-500 text-md'>Here's what's happening with your account today</p>
     </section>

@@ -70,7 +70,7 @@ const Quickactions = () => {
   return (
    <>
 
-   <section className='border border-gray-200 bg-white  rounded-xl h-full '>
+   <section className='border border-gray-200 bg-white p-6  rounded-xl h-full '>
     <div className='p-3 font-bold'>
         <h2>Quick Actions</h2>
     </div>
