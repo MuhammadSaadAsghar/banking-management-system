@@ -11,7 +11,7 @@ const Navbar = ({setIsSidearopen}) => {
         <RxHamburgerMenu/>
        </button>
       
-       <input className='border border-gray-400 rounded outline-none px-6 py-1 sm:hidden  ' type="text" placeholder='search ...' />
+       <input className='border border-gray-400 rounded outline-none px-6 py-1  ' type="text" placeholder='search ...' />
        
     </nav>
   )

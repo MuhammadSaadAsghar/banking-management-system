@@ -72,73 +72,92 @@ const RecentTransaction = () => {
 
   return (
     <>
-      <section className="border border-gray-300 py-4  rounded-xl bg-white">
-        <header className="flex flex-col gap-2 px-3 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-xl font-semibold sm:text-2xl">
-            Recent Transactions
-          </h2>
+     <section className="border border-gray-300 py-4 rounded-xl bg-white lg:min-h-100">
+       <header className="flex flex-col gap-2 px-3 sm:flex-row sm:items-center sm:justify-between">
+  <h2 className="text-xl font-semibold sm:text-2xl">
+    Recent Transactions
+  </h2>
 
-          <Link
-            className="text-sm text-[#0D6EFD] cursor-pointer sm:text-base"
-            to="/transactions"
-          >
-            View All
-          </Link>
-        </header>
+  <Link
+    className="cursor-pointer text-sm text-[#0D6EFD] sm:text-base"
+    to="/transactions"
+  >
+    View All
+  </Link>
+</header>
         <div className=" ">
           <table className="w-full mt-4 text-xs sm:text-sm">
-            <thead className="border-b border-t bg-gray-200  border-gray-200">
-              <tr>
-                <th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
-                  Date
-                </th>
-                <th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
-                  Type
-                </th>
-                <th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
-                  Account
-                </th>
-                <th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
-                  Amount
-                </th>
-                <th className="text-left px-2 py-2 sm:px-5 sm:py-3 text-[10px] sm:text-xs font-medium text-gray-500">
-                  Status
-                </th>
-              </tr>
-            </thead>
-            <tbody className="border-b px-4 border-gray-200">
-              {recentTransactions.map((ele) => {
-                const Icon = ele.icon;
-                return (
-                  <tr key={ele.id} className="border-b   border-gray-100">
-                    <td className="px-2 py-2 sm:px-3 text-[10px] sm:text-sm text-gray-700">
-                      {ele.date}
-                    </td>
-                    <td className="px-2 py-2 sm:px-2 text-[10px] sm:text-sm text-gray-700">
-                      <div className="flex items-center gap-1 sm:gap-2">
-                        <span className={`${ele.iconColor}`}>
-                          <Icon />
-                        </span>
-                        {ele.type}
-                      </div>
-                    </td>
-                    <td className="px-2 py-2 sm:px-2 text-[10px] sm:text-sm text-gray-700">
-                      {ele.account}
-                    </td>
-                    <td
-                      className={`px-2 py-2 sm:px-2 text-[10px] sm:text-sm ${ele.amountColor}`}
-                    >
-                      {ele.amount}
-                    </td>
-                    <td className="px-2 py-2 sm:px-3">
-                      <span className="rounded-full bg-green-100 px-2 py-1 text-[9px] sm:px-3 sm:text-xs font-medium text-green-600">
-                        {ele.status}
-                      </span>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
+           <thead className="border-y border-gray-200 bg-gray-200">
+  <tr>
+    <th className="px-2 py-2 text-left text-[10px] font-medium text-gray-500 sm:px-5 sm:py-3 sm:text-xs lg:py-5">
+      Date
+    </th>
+
+    <th className="px-2 py-2 text-left text-[10px] font-medium text-gray-500 sm:px-5 sm:py-3 sm:text-xs lg:py-5">
+      Type
+    </th>
+
+    <th className="px-2 py-2 text-left text-[10px] font-medium text-gray-500 sm:px-5 sm:py-3 sm:text-xs lg:py-5">
+      Account
+    </th>
+
+    <th className="px-2 py-2 text-left text-[10px] font-medium text-gray-500 sm:px-5 sm:py-3 sm:text-xs lg:py-5">
+      Amount
+    </th>
+
+    <th className="px-2 py-2 text-left text-[10px] font-medium text-gray-500 sm:px-5 sm:py-3 sm:text-xs lg:py-5">
+      Status
+    </th>
+  </tr>
+</thead>
+           <tbody className="lg:h-full">
+  {recentTransactions.map((ele) => {
+    const Icon = ele.icon;
+
+    return (
+      <tr
+        key={ele.id}
+        className="border-b border-gray-100 lg:h-16"
+      >
+
+        {/* Date */}
+        <td className="px-2 py-2 text-[10px] text-gray-700 sm:px-3 sm:text-sm lg:py-4">
+          {ele.date}
+        </td>
+
+        {/* Type */}
+        <td className="px-2 py-2 text-[10px] text-gray-700 sm:px-2 sm:text-sm lg:py-4">
+          <div className="flex items-center gap-1 sm:gap-2">
+            <span className={ele.iconColor}>
+              <Icon />
+            </span>
+            {ele.type}
+          </div>
+        </td>
+
+        {/* Account */}
+        <td className="px-2 py-2 text-[10px] text-gray-700 sm:px-2 sm:text-sm lg:py-4">
+          {ele.account}
+        </td>
+
+        {/* Amount */}
+        <td
+          className={`px-2 py-2 text-[10px] sm:px-2 sm:text-sm lg:py-4 ${ele.amountColor}`}
+        >
+          {ele.amount}
+        </td>
+
+        {/* Status */}
+        <td className="px-2 py-2 sm:px-3 lg:py-4">
+          <span className="rounded-full bg-green-100 px-2 py-1 text-[9px] font-medium text-green-600 sm:px-3 sm:text-xs">
+            {ele.status}
+          </span>
+        </td>
+
+      </tr>
+    );
+  })}
+</tbody>
           </table>
         </div>
       </section>

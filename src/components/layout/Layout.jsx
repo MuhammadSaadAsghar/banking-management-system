@@ -13,7 +13,7 @@ const [isSidebaropen, setIsSidearopen] = useState(false)
         <div className='flex-1 flex flex-col overflow-hidden'>
             <Navbar setIsSidearopen={setIsSidearopen}/>
 
-            <main className=' flex-1 overflow-y-auto'>
+            <main className='lg:p-6 flex-1 overflow-y-auto'>
                <Outlet/>
             </main>
         </div>

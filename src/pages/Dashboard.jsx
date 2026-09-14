@@ -9,20 +9,23 @@ import BalanceOverview from '../components/Dashboard/BalanceOverview';
 const Dashboard = () => {
   return (
    <>    
-   <div>
+   <div >
     <section className='p-6'>
       <h1 className='text-2xl font-bold'>Welcome back, Muhammad Saad Asghar &#128075;</h1>
       <p className='text-gray-500 text-md'>Here's what's happening with your account today</p>
     </section>
   <Dashboardcard/>
-  <div className='grid grid-cols-1 lg:grid-cols-5 gap-3 items-stretch'>
-    <div className='lg:col-span-3 grid-cols-1'>
-  <RecentTransaction/>
+ <div className="grid grid-cols-1 p-1  lg:grid-cols-5 items-stretch">
+
+  <div className="lg:col-span-3 flex">
+    <RecentTransaction />
   </div>
-  <div className='lg:col-span-2 grid-cols-1 h-full'>
-  <Quickactions/>
+
+  <div className="lg:col-span-2 flex">
+    <Quickactions />
   </div>
-  </div>
+
+</div>
   <BalanceOverview/>
    </div>
   </>
